@@ -1,6 +1,6 @@
-from pylast_config import network, username
+from pylast_config import NETWORK, USERNAME
 
-user = network.get_user(username)
+user = NETWORK.get_user(USERNAME)
 
 def updateBase(parameter_list):
     pass
