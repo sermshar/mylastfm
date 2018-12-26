@@ -10,15 +10,14 @@ def updateDB():
     """
     Connect to or create the database, get recent tracks not already in the database and add them to it
     """
-    engine = create_engine('sqlite:///mylastfm.sqlite3', echo=True)
+    engine = create_engine('sqlite:///mylastfm.sqlite3', echo=False)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    from_timestamp = last_timestamp(session)
+    from_timestamp = last_timestamp(session) + 1
     recent_scrobbles = get_scrobbles(from_timestamp)
-    formatted_scrobbles = format_scrobble_array(recent_scrobbles)
-    session.bulk_save_objects(formatted_scrobbles)
+    session.bulk_save_objects(recent_scrobbles)
 
     session.commit()
     session.close()
@@ -31,7 +30,6 @@ def get_scrobbles(from_timestamp):
     reseting the database to match last.fm (may take a few minutes).
     returns an array of Scrobble objects
     """
-    # TODO: make sure duplicate tracks aren't fetched
     lfm_user = NETWORK.get_user(USERNAME)
     cacheable = True if (from_timestamp == None) else False
     scrobbles = lfm_user.get_recent_tracks(
