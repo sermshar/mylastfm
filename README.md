@@ -11,9 +11,7 @@ Goals:
 
 ## setup
 
-Python version 3.7.0
-
-Add a file `mypylast/pylast_config.py` containing: 
+Add a file `pylast_config.py` to the root directory containing: 
 
 ```python
 import pylast
@@ -24,3 +22,11 @@ USERNAME = # YOUR USERNAME
 
 NETWORK = pylast.LastFMNetwork(api_key=API_KEY, api_secret=API_SECRET, username=USERNAME)
 ```
+
+---
+
+## Implementation Notes
+
+Uses `Python 3.7.0`.
+
+I used `virtualenv` and `pyenv`. To avoid pylint errors in vscode add a file `.env` to the root, containing `PYTHONPATH=./dataHandler`. ([why?](https://stackoverflow.com/questions/48973742/proper-relative-imports-unable-to-import-module))
