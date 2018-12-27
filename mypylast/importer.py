@@ -1,6 +1,5 @@
 from    pylast_config   import NETWORK, USERNAME
-from    models          import Scrobble
-from    base            import Base
+from    models          import Base, Scrobble
 from    sqlalchemy      import create_engine
 from    sqlalchemy.orm  import sessionmaker
 from    sqlalchemy.sql  import func
