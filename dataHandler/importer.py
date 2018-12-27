@@ -3,7 +3,6 @@ from    models          import Base, Scrobble
 from    sqlalchemy      import create_engine
 from    sqlalchemy.orm  import sessionmaker
 from    sqlalchemy.sql  import func
-import  numpy
 
 def updateDB():
     """
