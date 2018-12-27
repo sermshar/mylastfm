@@ -1,4 +1,5 @@
 pylast_config.py
 mylastfm.sqlite3
+__pycache__
 .python-version
 .vscode
