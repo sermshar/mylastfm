@@ -8,7 +8,7 @@ def update_db(db_file, fm_network, fm_username):
     """
     Connect to or create the database, get recent tracks not already in the database and add them to it
     """
-    engine = create_engine(("sqlite:///../databases/" + db_file), echo=False)
+    engine = create_engine(("sqlite:///" + db_file), echo=False)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
