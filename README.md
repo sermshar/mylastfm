@@ -9,4 +9,8 @@ focus on generating diagrams from the data.
 
 ### the last.fm configuration file
 
-copy the `config-example.py` file to `config.py` in the project root and replace the placeholder text. 
+Copy the `config-example.py` file to `config.py` in the project root and replace the placeholder text. 
+
+### the first run
+
+Run `python update-script.py` from the project root to download all your scrobbles into the database, this may take a while the first time if your library is large.
