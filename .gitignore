@@ -1,7 +1,8 @@
 config.py
-mylastfm.sqlite3
-__pycache__
+mylastfm.sqlite3*
+__pycache__/
 .python-version
-.vscode
+.vscode/
 .env
-.ipynb_checkpoints
+.ipynb_checkpoints/
+.idea/
