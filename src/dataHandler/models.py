@@ -29,7 +29,7 @@ class Track(Base):
     isrc = Column(String)
 
     def __repr__(self):
-        return "<RewriteScrobble(timestamp='%s', track='%s', album='%s', 'artist='%s')>" % (
+        return "<Track(timestamp='%s', track='%s', album='%s', 'artist='%s')>" % (
             self.timestamp, self.track, self.album, self.artist)
 
 
@@ -51,5 +51,14 @@ class RewriteRule(Base):
         'raw_track',
         'raw_album',
         'raw_artist',
-        name='_customer_location_uc'),
+        name='raw_scrobble_uc'),
     )
+
+
+class TrackArtist(Base):
+    __tablename__ = "tracks_artists"
+
+    id = Column(Integer, primary_key=True)
+    track_id = Column(Integer)
+    artist_id = Column(Integer)
+    order = Column(Integer)
